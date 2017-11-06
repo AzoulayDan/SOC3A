@@ -1,5 +1,1 @@
-python-2.7.14
-<<<<<<< HEAD
-
-=======
->>>>>>> 76fb39f0ccc97dde3e6d91a160c193ffe31efd99
+python-2.7.12
