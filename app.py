@@ -10,12 +10,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-	coucou = check_account('hello', 'babar', 'admin')
-	print(coucou);
-
-	resp = make_response(json.dumps({'hello':'hello world', 'babar':coucou}))
-	resp.mimetype = 'application/json'
-	return resp
+	return 'babar'
 
 
 ########################
