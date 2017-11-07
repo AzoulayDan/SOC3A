@@ -6,3 +6,4 @@ CREATE TABLE Account(
 	password	Varchar(25),
 	role 		Varchar(25)
 );
+

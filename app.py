@@ -2,6 +2,7 @@
 from flask import Flask, make_response
 from flask_cors import CORS
 import json
+from databaseManager import *
 
 app = Flask(__name__)
 app.debug = True
@@ -9,7 +10,10 @@ CORS(app)
 
 @app.route('/')
 def index():
-	resp = make_response(json.dumps({'hello':'hello world'}))
+	coucou = check_account('hello', 'babar', 'admin')
+	print(coucou);
+
+	resp = make_response(json.dumps({'hello':'hello world', 'babar':coucou}))
 	resp.mimetype = 'application/json'
 	return resp
 
