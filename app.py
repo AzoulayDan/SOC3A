@@ -10,7 +10,11 @@ CORS(app)
 
 @app.route('/')
 def index():
-	return 'babar'
+	existe = check_account('babar', 'merde', 'admin')
+	existepas = check_account('coucou', 'merder', 'essaie')
+	resp = make_response(json.dumps({'exist':exist, 'existepas':existepas}))
+	resp.mimetype = 'application/json'
+	return resp
 
 
 ########################
