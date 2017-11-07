@@ -2,7 +2,7 @@
 from flask import Flask, make_response
 from flask_cors import CORS
 import json
-from databaseManager import *
+import databaseManager
 
 app = Flask(__name__)
 app.debug = True
