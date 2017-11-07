@@ -10,11 +10,11 @@ class Db:
     url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
     self.conn = psycopg2.connect(
-        database="d178m2jahen8ai" #url.path[1:],
-        user="bdocljbrqczfqp" #url.username,
-        password="c325914c3ab7e653f1f9ad4037ce00f1fbadcaf66256f65777d38e8780b84479" #url.password,
-        host="ec2-46-137-174-67.eu-west-1.compute.amazonaws.com" #url.hostname,
-        port=5432 #url.port
+        database=url.path[1:],
+        user=url.username,
+        password=url.password,
+        host=url.hostname,
+        port=url.port
     )
     self.cur = self.conn.cursor()
 
