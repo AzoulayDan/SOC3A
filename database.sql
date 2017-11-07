@@ -7,3 +7,4 @@ CREATE TABLE Account(
 	role 		Varchar(25)
 );
 
+INSERT INTO Account(login, password, role) VALUES('babar', 'merde', 'admin')

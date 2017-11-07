@@ -13,6 +13,7 @@ def check_account(login, password, role):
 	print('passage ici')
 	count = db.select("SELECT COUNT(*) FROM Account WHERE (login = %s AND password = %s AND role = %s)" %(login, password, role))
 	print('passage la')
+	print(count)
 
 	if (count == 0):
 		number = -1
@@ -20,5 +21,4 @@ def check_account(login, password, role):
 		number = 0
 	db.close()
 	return number
-
 
