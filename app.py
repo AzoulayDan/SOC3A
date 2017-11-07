@@ -1,6 +1,7 @@
 #-*- encoding:utf-8 -*-
-from flask import Flask
+from flask import Flask, make_response
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 app.debug = True
@@ -8,7 +9,9 @@ CORS(app)
 
 @app.route('/')
 def index():
-	return 'hello world'
+	resp = make_response(json.dumps({'hello':'hello world'}))
+	resp.mimetype = 'application/json'
+	return resp
 
 ########################
 # Methodes GET
