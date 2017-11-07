@@ -2,7 +2,7 @@
 from flask import Flask, make_response
 from flask_cors import CORS
 import json
-import databaseManager
+from databaseManager import *
 
 app = Flask(__name__)
 app.debug = True
@@ -16,6 +16,20 @@ def index():
 	resp = make_response(json.dumps({'hello':'hello world', 'babar':coucou}))
 	resp.mimetype = 'application/json'
 	return resp
+
+
+########################
+# Initialisation BDD
+########################
+@app.route('/debug/db/reset')
+def init_db():
+	'''
+	Initialisation de la base de données
+	'''
+	db = Db()
+	db.executeFile('database.sql')
+	db.close()
+	return 'Database OK'
 
 ########################
 # Methodes GET
